@@ -1,6 +1,8 @@
-# MyFirstApp
+# MyFirstApp - Angular7
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This project contains a basic introduction of Angular7 Directives, Bindings, Interpolations etc.
+Author - Pavitra Behre
 
 ## Development server
 
