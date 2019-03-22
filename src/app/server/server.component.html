@@ -1,0 +1,36 @@
+<h1>Welcome to the server component</h1>
+<hr>
+<h2><strong>Actions:</strong></h2>
+<div class="row">
+  <div class="col-md-3">
+    <label>Server Name: </label>
+    <input type="text"
+     class="form-control col-1"
+     [(ngModel)]="serverName">
+    <button class="btn btn-primary"
+     [disabled]="!allowNewServer"
+     (click) = "onCreateServer()"
+     >Add Server</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-danger"
+    (click)="clearServers()">
+      Clear Servers
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12" *ngIf="serverCreated">
+    <p>{{ serverCreationStatus }}</p>
+  </div>
+</div>
+<hr>
+<h2>Server Info:</h2>
+<div class="row" *ngFor="let server of servers">
+  <div class="col-md-12" 
+  [ngStyle]="{'background-color': getColor(server)}"
+  [ngClass]="{'online': serverStatus[server] === 'online'}"
+  >
+      Server {{ server }} with ID: {{serverId[server]}} is {{serverStatus[server]}}
+  </div>
+</div>
